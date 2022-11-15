@@ -1,0 +1,45 @@
+<html>
+	<title> </title>
+<head>
+ <script>
+ function kiemtra_tk(){
+ if(document.dangki.tk.value=="")
+ {
+ alert(" vui lòng nhập tài khoản." );
+document.dangki.tk.focus();
+return false;
+}
+}
+function kiemtra_mk1(){
+if(document.dangki.mk1.value.length<7)
+{
+ alert("tài khoản tối thiểu 7 kí tự");
+ document.dangki.mk1.focus();
+ return false;
+ }
+ }
+ function kiemtra_mk2(){
+ if(document.dangki.mk1.value!=document.dangki.mk2.value)
+ {alert(" mật khẩu gỡ lại không chính xác ");
+ document.dangki.mk2.value=="";
+ document.dangki.mk2.focus();
+ return false;
+ }
+ }
+  function hoantat_dangki(){
+   document.write(" đăng kí thành công ");
+   }
+ </script>
+
+</head>
+<body>
+<form name= "dangki" method=post> 
+   <h3> tạo tài khoản gmail </h3>
+   tài khoản:<input type="text" name="tk" placeholder=" nhập tên tài khoản" size="15" onchange="return kiemtra_tk();" > <br> <br>
+   mật khẩu: <input type="password" name="mk1" placeholder="gỏ mk lần 1"  onchange="return kiemtra_mk1();"><br><br>
+   nhập lại mật khẩu: <input type="password" name="mk2"  placeholder="gỏ mk lần 2" onchange="return kiemtra_mk2();"><br><br>
+   <input type="checkbox" name= "agree">không đồng ý là đồng ý  :> <a href="#"> tìm hiểu thêm </a><br><br>
+   <input type="reset" name="save" value="hủy">
+   <input type="submit" name="save" value="hoàn thành" onclick=" return hoantat_dangki();" >
+</body>
+</html>  
